@@ -1,3 +1,5 @@
+![decoction logo](https://raw.githubusercontent.com/aarvay/decoction/master/logo.png)
+
 # Decoction
 
 Decoction is a static site generator written in Elixir. It's pretty nascent.
