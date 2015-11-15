@@ -1,4 +1,4 @@
-![decoction logo](https://raw.githubusercontent.com/aarvay/decoction/master/logo.png)
+<img src="https://raw.githubusercontent.com/aarvay/decoction/master/logo.png" width="120">
 
 # Decoction
 
