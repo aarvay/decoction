@@ -8,10 +8,6 @@ defmodule <%= module_name %>.Mixfile do
      deps: deps]
   end
 
-  def application do
-    [applications: []]
-  end
-
   defp deps do
     [{:decoction, github: "aarvay/decoction"}]
   end
