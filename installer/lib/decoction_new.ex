@@ -8,7 +8,6 @@ defmodule Mix.Tasks.Decoction.New do
   @mapping [
     {:eex, "README.md"},
     {:eex, "mix.exs"},
-    {:eex, "lib/app_name.ex"},
     {:eex, "config/config.exs"},
     {:text, "_site/css/normalize.css"},
     {:text, "_site/css/skeleton.css"},
