@@ -1,25 +1,42 @@
 defmodule Mix.Tasks.Decoction.Prepare do
   use Mix.Task
 
-  @shortdoc "Builds "
+  @shortdoc "Builds the static site"
 
   @moduledoc """
-  Creates a new Decoction site.
+  Builds the static site
 
-  It expects the path of the site as argument.
-
-      mix decoction.new PATH
+      mix decoction.prepare
   """
 
-  @spec run(OptionParser.argv) :: :ok
-  def run(argv) do
-    {_, argv, _} = OptionParser.parse(argv)
+  def run([]) do
 
-    case argv do
-      [] ->
-        Mix.shell.error "Expected PATH to be given, please use \"mix decoction.new PATH\""
-      [path|_] ->
-        Mix.shell.info(Path.expand(path))
+    {:ok, source_dir} = File.cwd
+    destination_dir = Path.join(source_dir, "_site")
+    project_files = ["config", "mix.exs", "README.md"]
+
+    # Clean up previous builds
+    {:ok, _} = File.rm_rf destination_dir
+
+    # Get the necessary files for builds
+    files = File.ls!
+            |> Enum.filter(fn(f) -> !Enum.member?(project_files, f) end)
+            |> Enum.filter(fn(f) -> Regex.match?(~r/^[^.].*$/, f) end)
+
+    :ok = prepare files
+
+  end
+
+  defp prepare(files) do
+    for file <- files do
+      format = get_file_type file
+
+      case format do
+        :eex ->
+      end
     end
+  end
+
+  defp get_file_type(file) do
   end
 end
