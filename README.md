@@ -2,7 +2,21 @@
 
 # Decoction
 
-Decoction is a static site generator written in Elixir. It's pretty nascent.
+Decoction is a static site generator written in Elixir. It is *currently
+experimental*
+
+## Readme Driven Development
+
+### Introduction
+I wanted to explore Elixir and the tools it come with. Writing a static site
+generator seemed like an exciting way to to do that because:
+
+ * Fundamentally, static site generators are about transformation of data, which
+ is what functional programming encourages. Elixir would be a great fit for the
+ job.
+ * Elixir ships with tools like Mix, EEx, which could be used right off the
+ shelf, for building, templating.
+ * Also, why not Elixir(ify) everything? :smirk:
 
 ## License
 
