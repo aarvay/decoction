@@ -3,7 +3,23 @@
 # Decoction
 
 Decoction is a static site generator written in Elixir. It is *currently
-experimental*
+experimental*.
+
+## Installation
+Decoction comes with an installer as a mix archive which will expose a mix task
+`decoction.new` for generating new a decoction site. For now you have to build
+and install the archive locally. Checkout the installer's
+[README](installer/README.md).
+
+## Usage
+
+```sh
+$ mix decoction.new my_site && cd my_site
+$ mix decoction.prepare
+$ mix decoction.serve
+```
+
+Point your web browser to http://localhost:4000
 
 ## Readme Driven Development
 
@@ -17,6 +33,16 @@ generator seemed like an exciting way to to do that because:
  * Elixir ships with tools like Mix, EEx, which could be used right off the
  shelf, for building, templating.
  * Also, why not Elixir(ify) everything? :smirk:
+
+### Goals
+
+ * **Simple** - Make it super simple to create and modify content.
+ * **Fast** - Make it super fast at what it does primarily - building the site.
+ We can take advantage of Elixir's concurrency paradigms to really achieve this.
+ * **Extensible** - Make it easy to extend the tool to fit any use case for
+ building a static site. Elixir does this already internally. It's so extensible
+ as a language that the language is written mostly written in itself (powerful
+ macro system).
 
 ## License
 
